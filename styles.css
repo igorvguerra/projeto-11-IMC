@@ -16,6 +16,7 @@
     --tt-placeholder: rgba(73, 80, 87, 0.5);
     --tt-button: white;
     --bg-button: #02799D;
+    --bg-button-hover: #01475c;
     --bg-error: #F03E3E;
     --tt-error: white;
 
@@ -23,8 +24,12 @@
 
 body {
     background-color: #040924;
-    font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;;
+}
+
+body, input, button {
+    font-size: 1.6rem;
+    line-height: 2rem;
 }
 
 .container {
@@ -47,6 +52,10 @@ body {
     font-size: 3.2rem;
     line-height: 4rem;
     color: var(--tt-heading);
+}
+
+form {
+    width: 30rem;
 }
 
 form h1 {
@@ -81,3 +90,49 @@ form input::placeholder {
     margin-top: 1.6rem;
 }
 
+form button {
+    margin-top: 3.2rem;
+    padding: 1.6rem;
+    width: 100%;
+    border: none;
+    background-color: var(--bg-button);
+    color: var(--tt-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    font-weight: bold;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+form button:hover {
+    background: var(--bg-button-hover);
+}
+
+.modal-wrapper {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: grid;
+    place-content: center;
+}
+
+.modal {
+    position: relative;
+}
+
+.modal button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.modal button:hover {
+    transform: scale(1.1);
+}
